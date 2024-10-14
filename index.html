@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    </script>
+    <title>yum yummeres</title>
+    <link rel="icon" href="img/arknigh.png">
+    <script src="jquery.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <style>
+        #container {
+            width: 1200px;
+            height: 400px;
+            border: 1px solid #d7d6d6;
+            border-radius: 20px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        #coordinates {
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#container").mousemove(function (event) {
+                var x = event.pageX - $(this).offset().left;
+                var y = event.pageY - $(this).offset().top;
+                $("#coordinates").text("Mouse coordinates: (" + x + ", " + y + ")");
+            });
+
+            $("#myInput").focus(function(){
+                $("#focusStatus").text("Input field focused");
+                // Perform actions when the input field gains focus
+            });
+
+            $("#myInput").blur(function(){
+                $("#focusStatus").text("Input field blurred");
+                // Perform actions when the input field loses focus
+            });
+
+            $("input[type='checkbox']").change(function(){
+                var checkedValues = [];
+                $("input[type='checkbox']:checked").each(function(){
+                    checkedValues.push($(this).val());
+                });
+
+                // Display selected checkbox values
+                $("#selectedValues").text("Selected Values: " + checkedValues.join(', '));
+            });
+
+            $("#mySelect").change(function(){
+                var selectedOption = $(this).val();
+                $("#selectedOption").text("Selected Option: " + selectedOption);
+                // Perform actions based on the selected option
+            });
+
+            $("#myInput").keypress(function(event){
+                var keyPressed = event.key;
+                $("#keyInfo").text("Key Pressed: " + keyPressed);
+
+                // Check if 'Enter' key is pressed (key code 13)
+                if (event.which === 13 || event.keyCode === 13) {
+                    $("#keyInfo").append("<br>Enter key pressed!");
+                    // Perform specific action for Enter key press
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#grey" class="bi bi-egg"
+                viewBox="0 0 16 16">
+                <path
+                    d="M8 15a5 5 0 0 1-5-5c0-1.956.69-4.286 1.742-6.12.524-.913 1.112-1.658 1.704-2.164C7.044 1.206 7.572 1 8 1c.428 0 .956.206 1.554.716.592.506 1.18 1.251 1.704 2.164C12.31 5.714 13 8.044 13 10a5 5 0 0 1-5 5zm0 1a6 6 0 0 0 6-6c0-4.314-3-10-6-10S2 5.686 2 10a6 6 0 0 0 6 6z" />
+            </svg>
+            <h1>Poo-Poo.com</h1>
+        </div>
+        <div class="nav-link">
+            <ul>
+                <li><a href="index.html" class="action">Home</a></li>
+                <li><a href="about/about.html">About</a></li>
+                <li><a href="dealership/dealership.html">Dealership</a></li>
+                <li><a href="gallery/gallery.html">gallery</a></li>
+                <li><a href="location/location.html">Location</a></li>
+            </ul>
+        </div>
+        <form class="d-flex" role="search">
+            <i class="bi bi-search"></i>
+            <input class="form-control me-2 bi" type="search" placeholder="Search" aria-label="Search">
+            <button type="button" class="btn btn-outline-primary">Search</button>
+        </form>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user-circle bigger-icon me-2"></i> <!-- Adjust the class here -->
+                User
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="login-register/login.html">Login</a></li>
+                <li><a class="dropdown-item" href="login-register/register.html">Register</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Container -->
+    <div class="container1">
+        <div class="right">
+            <p class="p1">Welcome to Our Website</p>
+            <p class="p2">We Make Your Money Goes <br> bye bye!</p>
+            <button class="btn-1">Car</button>
+        </div>
+    </div>
+    <!-- end Container -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#0099ff" fill-opacity="2" d="M0,224L0,64L1440,64L1440,320L0,320L0,320Z"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#0099ff" fill-opacity="1"
+            d="M0,192L30,165.3C60,139,120,85,180,85.3C240,85,300,139,360,181.3C420,224,480,256,540,250.7C600,245,660,203,720,186.7C780,171,840,181,900,186.7C960,192,1020,192,1080,186.7C1140,181,1200,171,1260,181.3C1320,192,1380,224,1410,240L1440,256L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z">
+        </path>
+    </svg>
+    <div class="container2" id="Container">
+        <h1>car</h1>
+        <div class="card">
+            <center>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/sV5MwVYQwS8?si=qd-8E-4f1K79hrZm"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </center>
+            <h2>do you want to see more?</h2>
+        </div>
+    </div>
+    <br>
+    <!-- container 3 -->
+    <div class="comtainer3">
+        <h1 style="text-align: center;">The Cars Type</h1>
+        <div class="card1">
+            <div class="card2">
+                <h4>
+                    FERRARI PORTOFINO
+                </h4>
+                <img class="img"
+                    src="https://static.wikia.nocookie.net/forzamotorsport/images/4/47/HOR_XB1_Ferrari_Portofino.png"
+                    alt="">
+                <div class="card-container">
+                    <a  type="button" class="button" href="order/order.html">view</a>
+                </div>
+            </div>
+            <div class="card2">
+                <h4>
+                    Mercedes-benz SL 65 AMG
+                </h4>
+                <img class="img"
+                    src="https://static.wikia.nocookie.net/forzamotorsport/images/2/28/HOR_XB1_M-B_SL_65.png" alt="">
+                <div class="card-container">
+                    <a  type="button" class="button" href="order/order.html">view</a>
+                </div>
+            </div>
+            <div class="card2">
+                <h4>
+                    BMW i8
+                </h4>
+                <img class="img" src=" https://static.wikia.nocookie.net/forzamotorsport/images/7/7e/HOR_XB1_BMW_i8.png"
+                    alt="">
+                <div class="card-container">
+                    <a  type="button" class="button" href="order/order.html">view</a>
+                </div>
+            </div>
+            <div class="card2">
+                <h4>
+                    NiSSAN GT-R R33
+                </h4>
+                <img class="img"
+                    src="https://static.wikia.nocookie.net/forzamotorsport/images/d/d8/HOR_XB1_Nissan_GT-R_95.png"
+                    alt="">
+                <div class="card-container">
+                    <a  type="button" class="button" href="order/order.html">view</a>
+                </div>
+            </div>
+            <div class="card2">
+                <h4>
+                    BMW M3'08
+                </h4>
+                <img class="img"
+                    src="https://static.wikia.nocookie.net/forzamotorsport/images/0/0a/HOR_XB1_BMW_M3_08.png/" alt="">
+                <div class="card-container">
+                    <a  type="button" class="button" href="order/order.html">view</a>
+                </div>
+            </div>
+            <div class="card2">
+                <h4>
+                    Audi R8
+                </h4>
+                <img class="img"
+                    src="https://static.wikia.nocookie.net/forzamotorsport/images/f/f2/HOR_XB1_Audi_R8_13.png" alt="">
+                <div class="card-container">
+                    <a  type="button" class="button" href="order/order.html">view</a>
+                </div>
+            </div>
+            <div class="card2">
+                <h4>
+                    Porsche 911'19
+                </h4>
+                <img class="img" src="https://static.wikia.nocookie.net/forzamotorsport/images/6/61/HOR_XB1_Porsche_911_19_Carrera.png/
+                " alt="">
+                <div class="card-container">
+                    <a  type="button" class="button" href="order/order.html">view</a>
+                </div>
+            </div>
+            <div class="card2">
+                <h4>
+                    Aston-Martin Vantage
+                </h4>
+                <img class="img"
+                    src="https://static.wikia.nocookie.net/forzamotorsport/images/5/56/HOR_XB1_AM_Vantage_16.png"
+                    alt="">
+                <div class="card-container">
+                    <a type="button" class="button" href="order/order.html">view</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h1 style="color: #4169E1;">
+        <marquee scrollamount="20">get your free cars today</marquee>
+    </h1>
+    <!-- end container 3 -->
+    <!-- Container Free -->
+    <div class="container-free">
+        <center>
+            <h1>Mouse Event!</h1>
+            <h1>Its a cool feature</h1>
+        
+        <div id="container">
+            <p>Move your mouse over this area:</p>
+            <p id="coordinates"></p>
+        </div>
+        <br>
+        <h4>Focus Event & KeyPress Event!</h4>
+        <input type="text" id="myInput" placeholder="Click here" style="width: 1200px;">
+    <p id="focusStatus"></p>
+<p id="keyInfo"></p>
+    </div>
+    </center>
+
+    <!-- Container Free -->
+    <!-- Container 4-->
+    <div class="form4">
+        <div class="dalem-form">
+            <h1 style="text-align: center;">contact form</h1>
+            <h1>Please Fill Our form</h1>
+            <h4>Change Event!</h4>
+             <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Select Your Car</label>
+                    <select class="form-select" id="mySelect">
+                      <option>Car 1</option>
+                      <option>Car 2</option>
+                      <option>Car 3</option>
+                    </select>
+                  </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <p id="selectedValues">Selected Values: </p>
+                <p id="selectedOption">Selected Option: </p>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+
+    <!-- end container 4 -->
+
+    <!-- Form container 5 -->
+    <h1 style="text-align: center;">the car</h1>
+    <div class="container4">
+    </div>
+    <br>
+    <br>
+
+
+    <!-- end contrainer 5 -->
+    <br>
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="cover">
+                <div class="quick-link">
+                    <ul>
+                        <li>
+                            <h2>Quick Link</h2>
+                        </li>
+                        <li><a href="">Our Pricing</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">News</a></li>
+                    </ul>
+                </div>
+                <div class="fasilitas">
+                    <ul>
+                        <li>
+                            <h2>Our Facilities</h2>
+                        </li>
+                        <li><a href="">Car</a></li>
+                        <li><a href="">Car</a></li>
+                        <li><a href="">Car</a></li>
+                    </ul>
+                </div>
+                <div class="more">
+                    <ul>
+                        <li>
+                            <h2>More Services</h2>
+                        </li>
+                        <li><a href="">car</a></li>
+                        <li><a href="">car</a></li>
+                        <li><a href="">car</a></li>
+                        <li><a href="">car</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <ul>
+                        <li>
+                            <h2>Contact Us</h2>
+                        </li>
+                        <li>
+                            <p>225,Galle Road,
+                                Kalutara South,
+                                Sri Lanka
+                            </p>
+                        </li>
+                        <li>
+                            <p>Tel: +94 34 2 222 888
+                            </p>
+                        </li>
+                        <li>
+                            <p>Email:
+                                contact@phliphospitals.com
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <script src="https://kit.fontawesome.com/eba53aeffa.js" crossorigin="anonymous"></script>
+</body>
+<script>
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
+</body>
+
+</html>
