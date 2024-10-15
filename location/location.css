@@ -91,6 +91,10 @@ nav .logo{
     margin: auto;
 }
 
+.location-title{
+    text-align: center;
+    font-weight: 600;
+}
 
 .card1{
     display: flex;
