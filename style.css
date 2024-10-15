@@ -292,35 +292,48 @@ nav .logo{
    
 }
 /* Footer */
-.footer{
+.footer {
     height: 330px;
     background-color: #4169E1;
-    justify-content: space-around;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Vertically aligns the content */
 }
 
-.cover{
+.cover {
     width: 80%;
     margin: auto;
     padding: 50px 0;
     display: flex;
+    justify-content: space-between; /* Space items evenly */
 }
 
-.quick-link, .fasilitas, .more, .footer-contact{
+.quick-link, .fasilitas, .more, .footer-contact {
     width: 25%;
+    display: flex;
+    flex-direction: column; /* Ensure elements stack vertically */
+    align-items: flex-start; /* Align text to the left */
+    padding: 0 20px; /* Add padding for better spacing */
 }
 
-.quick-link ul, .fasilitas ul, .more ul, .footer-contact ul{
+.quick-link ul, .fasilitas ul, .more ul, .footer-contact ul {
     list-style: none;
-    line-height: 30px;
+    line-height: 30px; /* Consistent line height */
 }
 
-.quick-link li a, .fasilitas ul li a, .more ul li a, .footer-contact p{
+.quick-link li a, .fasilitas ul li a, .more ul li a, .footer-contact p {
     text-decoration: none;
     color: white;
 }
 
-.cover h2{
+.cover h2 {
     color: white;
     margin-bottom: 20px;
 }
+
+.footer-contact p {
+    margin: 0; /* Remove default margin for better spacing */
+    color: white;
+}
+
 /* End Footer */
