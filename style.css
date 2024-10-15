@@ -291,36 +291,98 @@ nav .logo{
     display: inline-block;
    
 }
+
+.sponsorslider .marquee {
+    --gap: 1rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+  }
+  
+  .sponsorslider .marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  
+  .sponsorslider .marquee__content {
+    animation: scroll 20s linear infinite;
+  }
+  .sponsorslider .marquee:hover .marquee__content {
+    animation-play-state: paused;
+  }
+  
+  .sponsorslider img {
+    height: 150px;
+    object-fit:cover;
+    width:100%
+  }
+  
+  @keyframes scroll-abs {
+    from {
+      transform: translateX(calc(100% + var(--gap)));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
 /* Footer */
-.footer{
+.footer {
     height: 330px;
     background-color: #4169E1;
-    justify-content: space-around;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Vertically aligns the content */
 }
 
-.cover{
+.cover {
     width: 80%;
     margin: auto;
     padding: 50px 0;
     display: flex;
+    justify-content: space-between; /* Space items evenly */
 }
 
-.quick-link, .fasilitas, .more, .footer-contact{
+.quick-link, .fasilitas, .more, .footer-contact {
     width: 25%;
+    display: flex;
+    flex-direction: column; /* Ensure elements stack vertically */
+    align-items: flex-start; /* Align text to the left */
+    padding: 0 20px; /* Add padding for better spacing */
 }
 
-.quick-link ul, .fasilitas ul, .more ul, .footer-contact ul{
+.quick-link ul, .fasilitas ul, .more ul, .footer-contact ul {
     list-style: none;
-    line-height: 30px;
+    line-height: 30px; /* Consistent line height */
 }
 
-.quick-link li a, .fasilitas ul li a, .more ul li a, .footer-contact p{
+.quick-link li a, .fasilitas ul li a, .more ul li a, .footer-contact p {
     text-decoration: none;
     color: white;
 }
 
-.cover h2{
+.cover h2 {
     color: white;
     margin-bottom: 20px;
 }
+
+.footer-contact p {
+    margin: 0; /* Remove default margin for better spacing */
+    color: white;
+}
+
 /* End Footer */
