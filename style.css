@@ -292,54 +292,50 @@ nav .logo{
    
 }
 
-.sponsorslider .marquee {
-    --gap: 1rem;
-    position: relative;
+.sponsorslider {
     display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    user-select: none;
-    gap: var(--gap);
-  }
-  
-  .sponsorslider .marquee__content {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-around;
-    gap: var(--gap);
-    min-width: 100%;
-  }
-  
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(-100% - var(--gap)));
-    }
-  }
-  
-  .sponsorslider .marquee__content {
-    animation: scroll 20s linear infinite;
-  }
-  .sponsorslider .marquee:hover .marquee__content {
-    animation-play-state: paused;
-  }
-  
-  .sponsorslider img {
-    height: 150px;
-    object-fit:cover;
-    width:100%
-  }
-  
-  @keyframes scroll-abs {
-    from {
-      transform: translateX(calc(100% + var(--gap)));
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
+    gap: 2rem; /* Adjust gap between items */
+    padding: 2rem 0; /* Add padding for better spacing */
+    background-color: #fff; /* Optional: set background */
+}
 
+.sponsorslider__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem; /* Space between logos */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sponsorslider li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Fixed width for consistent scaling */
+    height: 150px; /* Fixed height for alignment */
+}
+
+.sponsorslider img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.sponsorslider a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.sponsorslider img:hover {
+    transform: scale(1.1); /* Subtle zoom effect on hover */
+}
 /* Footer */
 .footer {
     height: 330px;
